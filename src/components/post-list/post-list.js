@@ -5,7 +5,7 @@ import {ListGroup} from 'reactstrap';
 
 import './post-list.css';
 
-const PostList = ({posts}) => {
+const PostList = ({posts, onDelete}) => {
 
     const elements = posts.map((item) => {
         const {id, ...itemProps} = item;
@@ -15,6 +15,7 @@ const PostList = ({posts}) => {
                 <PostListItem {...itemProps}
                 // label = {item.label}
                 // important = {item.important} //старый формат, без деструктуризации
+                onDelete = {() => onDelete(id)}
                 />
             </li>
         )
